@@ -92,7 +92,7 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 
 | File | Priority | Status | Summary |
 |------|----------|--------|---------|
-<!-- Add rows as goals are created. File column: [GOAL-kebab-name](goals/GOAL-kebab-name.md) -->
+| [GOAL-paid-api-readiness](goals/GOAL-paid-api-readiness.md) | Must-have | Draft | Bring FuFirE to production quality for paid B2B API launch |
 
 ---
 
@@ -100,7 +100,12 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 
 | File | Role | Priority | Status | Summary |
 |------|------|----------|--------|---------|
-<!-- Add rows as user stories are created. File column: [US-kebab-name](user-stories/US-kebab-name.md) -->
+| [US-accurate-aspects](user-stories/US-accurate-aspects.md) | STK-api-consumer | Must-have | Draft | Differentiated aspect orbs per planet pair |
+| [US-full-transit-planets](user-stories/US-full-transit-planets.md) | STK-api-consumer | Must-have | Draft | Uranus, Neptune, Pluto in transit calculations |
+| [US-precise-daily-jieqi](user-stories/US-precise-daily-jieqi.md) | STK-astrologer | Must-have | Draft | Astronomically precise Jieqi in daily eastern |
+| [US-accurate-rate-limits](user-stories/US-accurate-rate-limits.md) | STK-api-consumer | Must-have | Draft | Accurate per-key rate limit tracking |
+| [US-transparent-fusion](user-stories/US-transparent-fusion.md) | STK-api-consumer | Should-have | Draft | Full parameter transparency in provenance |
+| [US-honest-feature-scope](user-stories/US-honest-feature-scope.md) | STK-api-consumer | Must-have | Draft | Remove or implement permanently-null fields |
 
 ---
 
@@ -108,7 +113,12 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 
 | File | Type | Priority | Status | Summary |
 |------|------|----------|--------|---------|
-<!-- Add rows as requirements are created. File column: [REQ-CLASS-kebab-name](requirements/REQ-CLASS-kebab-name.md) -->
+| [REQ-F-differentiated-orbs](requirements/REQ-F-differentiated-orbs.md) | Functional | Must-have | Draft | Planet-specific aspect orb table |
+| [REQ-F-outer-planet-transits](requirements/REQ-F-outer-planet-transits.md) | Functional | Must-have | Draft | Outer planets in transit calculations |
+| [REQ-F-precise-jieqi-daily](requirements/REQ-F-precise-jieqi-daily.md) | Functional | Must-have | Draft | Swiss Ephemeris Jieqi in daily eastern |
+| [REQ-F-persistent-rate-limits](requirements/REQ-F-persistent-rate-limits.md) | Functional | Must-have | Draft | Persistent per-key rate limit counters |
+| [REQ-F-provenance-soulprint-weights](requirements/REQ-F-provenance-soulprint-weights.md) | Functional | Should-have | Draft | Soulprint weights in provenance |
+| [REQ-F-remove-null-deltas](requirements/REQ-F-remove-null-deltas.md) | Functional | Must-have | Draft | Remove or implement transit delta fields |
 
 ---
 
@@ -116,7 +126,8 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 
 | File | Category | Status | Risk | Summary |
 |------|----------|--------|------|---------|
-<!-- Add rows as assumptions are created. File column: [ASM-kebab-name](assumptions/ASM-kebab-name.md) -->
+| [ASM-redis-available-on-fly](assumptions/ASM-redis-available-on-fly.md) | Technology | Unverified | Medium | Redis can be provisioned on Fly.io ams region |
+| [ASM-soulprint-mapping-acceptable](assumptions/ASM-soulprint-mapping-acceptable.md) | Business | Unverified | High | Proprietary Wu-Xing→sector mapping is acceptable if documented |
 
 ---
 
@@ -124,4 +135,5 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 
 | File | Category | Status | Summary |
 |------|----------|--------|---------|
-<!-- Add rows as constraints are created. File column: [CON-kebab-name](constraints/CON-kebab-name.md) -->
+| [CON-redis-dependency](constraints/CON-redis-dependency.md) | Technical | Active | Redis required for persistent rate limiting |
+| [CON-no-breaking-changes](constraints/CON-no-breaking-changes.md) | Technical | Active | No breaking changes to existing API contracts |

@@ -12,6 +12,8 @@ Everyone with a stake in the system: those who use it, fund it, maintain it, or 
 
 | ID | Role | Description | Interests | Influence |
 |----|------|-------------|-----------|-----------|
-| STK-placeholder | Placeholder Role | Replace with your first stakeholder | What they care about | High / Medium / Low |
-<!-- Replace the placeholder row with your actual stakeholders. -->
-<!-- ID format: STK-kebab-name (e.g., STK-end-user, STK-product-owner) -->
+| STK-founder | Founder / Product Owner | FuFirE creator and business owner | Revenue, brand credibility, astrological correctness, launch timeline | High |
+| STK-api-consumer | B2B API Consumer | Developers integrating FuFirE into their apps (horoscope apps, wellness platforms) | Reliable data, accurate calculations, clear documentation, consistent response schemas | High |
+| STK-astrologer | Professional Astrologer | Subject matter expert validating astrological correctness | Traditional accuracy (BaZi + Western), proper orb tables, dignities, correct solar terms | Medium |
+| STK-end-user | End User | Person receiving horoscope/chart via consumer app | Personalized, meaningful daily content; trustworthy readings | Low |
+| STK-ops-engineer | Operations Engineer | Maintains deployment, monitors uptime, handles incidents | Observability, rate-limit accuracy, caching correctness, error traceability | Medium |

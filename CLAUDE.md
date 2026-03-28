@@ -12,7 +12,14 @@ This repository uses a structured, AI-first development lifecycle. All project k
 
 ### Current State
 
-The project is just the base scaffold, and has not yet been inizialized. The repository contains the AI SDLC framework (phase directories, templates, automation skills) ready to be populated starting from the Specification phase, after the inizialization has been done.
+**Project**: FuFirE Paid API Readiness — bringing the Fusion Firmament Engine to production quality for a paid B2B API service.
+
+**Active phase**: Specification (complete) → Code (Phase 1 ready to execute)
+
+- **1-spec/**: Fully populated — 1 goal, 6 user stories, 6 requirements, 2 assumptions, 2 constraints, 5 stakeholders
+- **3-code/tasks.md**: 13 tasks across 2 phases, Phase 1 (P0 blockers) ready to start
+- **Source codebase**: `../bazi_engine/` — the FuFirE engine being improved
+- **API documentation**: `docs/API_SERVICE_DOCUMENTATION.md` — full endpoint + fusion math reference
 
 ---
 
