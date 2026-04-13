@@ -92,7 +92,10 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 
 | File | Priority | Status | Summary |
 |------|----------|--------|---------|
-| [GOAL-paid-api-readiness](goals/GOAL-paid-api-readiness.md) | Must-have | Draft | Bring FuFirE to production quality for paid B2B API launch |
+| [GOAL-convert-visitors](goals/GOAL-convert-visitors.md) | Must-have | Draft | Convert visitors into paying customers through the scroll funnel |
+| [GOAL-immersive-experience](goals/GOAL-immersive-experience.md) | Must-have | Draft | Deliver premium, trust-building scroll experience (mobile, bilingual, fast) |
+| [GOAL-legal-launch-readiness](goals/GOAL-legal-launch-readiness.md) | Must-have | Draft | DSGVO, Impressum, Cookie consent for DACH launch |
+| [GOAL-sharing-virality](goals/GOAL-sharing-virality.md) | Could-have | Draft | Enable sharing and revisiting of readings (post-launch) |
 
 ---
 
@@ -100,12 +103,14 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 
 | File | Role | Priority | Status | Summary |
 |------|------|----------|--------|---------|
-| [US-accurate-aspects](user-stories/US-accurate-aspects.md) | STK-api-consumer | Must-have | Draft | Differentiated aspect orbs per planet pair |
-| [US-full-transit-planets](user-stories/US-full-transit-planets.md) | STK-api-consumer | Must-have | Draft | Uranus, Neptune, Pluto in transit calculations |
-| [US-precise-daily-jieqi](user-stories/US-precise-daily-jieqi.md) | STK-astrologer | Must-have | Draft | Astronomically precise Jieqi in daily eastern |
-| [US-accurate-rate-limits](user-stories/US-accurate-rate-limits.md) | STK-api-consumer | Must-have | Draft | Accurate per-key rate limit tracking |
-| [US-transparent-fusion](user-stories/US-transparent-fusion.md) | STK-api-consumer | Should-have | Draft | Full parameter transparency in provenance |
-| [US-honest-feature-scope](user-stories/US-honest-feature-scope.md) | STK-api-consumer | Must-have | Draft | Remove or implement permanently-null fields |
+| [US-character-reading-flow](user-stories/US-character-reading-flow.md) | STK-visitor | Must-have | Draft | Enter birth date, receive character reading with teaser → paywall → full |
+| [US-partnership-reading-flow](user-stories/US-partnership-reading-flow.md) | STK-couple | Must-have | Draft | Enter both birth dates, receive compatibility reading with teaser → paywall → full |
+| [US-paywall-checkout](user-stories/US-paywall-checkout.md) | STK-founder | Must-have | Draft | Payment required before full reading is unlocked |
+| [US-scroll-journey](user-stories/US-scroll-journey.md) | STK-visitor | Must-have | Draft | Smooth animated scroll with pinned sections and snap |
+| [US-mobile-experience](user-stories/US-mobile-experience.md) | STK-visitor | Must-have | Draft | Full-quality responsive experience on mobile |
+| [US-language-switch](user-stories/US-language-switch.md) | STK-visitor | Must-have | Draft | Switch between German and English with locale detection |
+| [US-cookie-consent](user-stories/US-cookie-consent.md) | STK-visitor | Must-have | Draft | Cookie consent banner with granular control |
+| [US-legal-pages](user-stories/US-legal-pages.md) | STK-founder | Must-have | Draft | Impressum and Datenschutzerklarung accessible from all states |
 
 ---
 
@@ -113,12 +118,20 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 
 | File | Type | Priority | Status | Summary |
 |------|------|----------|--------|---------|
-| [REQ-F-differentiated-orbs](requirements/REQ-F-differentiated-orbs.md) | Functional | Must-have | Draft | Planet-specific aspect orb table |
-| [REQ-F-outer-planet-transits](requirements/REQ-F-outer-planet-transits.md) | Functional | Must-have | Draft | Outer planets in transit calculations |
-| [REQ-F-precise-jieqi-daily](requirements/REQ-F-precise-jieqi-daily.md) | Functional | Must-have | Draft | Swiss Ephemeris Jieqi in daily eastern |
-| [REQ-F-persistent-rate-limits](requirements/REQ-F-persistent-rate-limits.md) | Functional | Must-have | Draft | Persistent per-key rate limit counters |
-| [REQ-F-provenance-soulprint-weights](requirements/REQ-F-provenance-soulprint-weights.md) | Functional | Should-have | Draft | Soulprint weights in provenance |
-| [REQ-F-remove-null-deltas](requirements/REQ-F-remove-null-deltas.md) | Functional | Must-have | Draft | Remove or implement transit delta fields |
+| [REQ-F-birth-data-input](requirements/REQ-F-birth-data-input.md) | Functional | Must-have | Draft | Birth date/time form, single + partner mode |
+| [REQ-F-reading-generation](requirements/REQ-F-reading-generation.md) | Functional | Must-have | Draft | Tri-system reading (API or client-side fallback) |
+| [REQ-F-teaser-preview](requirements/REQ-F-teaser-preview.md) | Functional | Must-have | Draft | Teaser preview before payment (max 30% of full reading) |
+| [REQ-F-payment-integration](requirements/REQ-F-payment-integration.md) | Functional | Must-have | Draft | Stripe Checkout for reading purchase |
+| [REQ-F-reading-unlock](requirements/REQ-F-reading-unlock.md) | Functional | Must-have | Draft | Unlock full reading after verified payment |
+| [REQ-F-i18n](requirements/REQ-F-i18n.md) | Functional | Must-have | Draft | DE + EN, locale detection, manual toggle |
+| [REQ-PERF-initial-load](requirements/REQ-PERF-initial-load.md) | Performance | Must-have | Draft | FCP < 3s on 4G, < 1.5s on broadband |
+| [REQ-USA-responsive-layout](requirements/REQ-USA-responsive-layout.md) | Usability | Must-have | Draft | Responsive 320px-2560px, 44px tap targets |
+| [REQ-USA-scroll-animations](requirements/REQ-USA-scroll-animations.md) | Usability | Must-have | Draft | 60fps GSAP animations, graceful degradation |
+| [REQ-COMP-cookie-banner](requirements/REQ-COMP-cookie-banner.md) | Compliance | Must-have | Draft | Cookie consent, blocks non-essential until opted in |
+| [REQ-COMP-impressum](requirements/REQ-COMP-impressum.md) | Compliance | Must-have | Draft | TMG/DDG-compliant Impressum |
+| [REQ-COMP-privacy-policy](requirements/REQ-COMP-privacy-policy.md) | Compliance | Must-have | Draft | DSGVO-compliant Datenschutzerklarung |
+| [REQ-SEC-data-protection](requirements/REQ-SEC-data-protection.md) | Security | Must-have | Draft | HTTPS, no PII in logs, Stripe webhook validation |
+| [REQ-MNT-railway-deploy](requirements/REQ-MNT-railway-deploy.md) | Maintainability | Must-have | Draft | Build and deploy on Railway with env-var config |
 
 ---
 
@@ -126,8 +139,7 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 
 | File | Category | Status | Risk | Summary |
 |------|----------|--------|------|---------|
-| [ASM-redis-available-on-fly](assumptions/ASM-redis-available-on-fly.md) | Technology | Unverified | Medium | Redis can be provisioned on Fly.io ams region |
-| [ASM-soulprint-mapping-acceptable](assumptions/ASM-soulprint-mapping-acceptable.md) | Business | Unverified | High | Proprietary Wu-Xing→sector mapping is acceptable if documented |
+| [ASM-fufire-api-available](assumptions/ASM-fufire-api-available.md) | Technology | Unverified | High | FuFirE API is deployed and accessible for integration |
 
 ---
 
@@ -135,5 +147,8 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 
 | File | Category | Status | Summary |
 |------|----------|--------|---------|
-| [CON-redis-dependency](constraints/CON-redis-dependency.md) | Technical | Active | Redis required for persistent rate limiting |
-| [CON-no-breaking-changes](constraints/CON-no-breaking-changes.md) | Technical | Active | No breaking changes to existing API contracts |
+| [CON-railway-deployment](constraints/CON-railway-deployment.md) | Technical | Active | Deployment on Railway |
+| [CON-launch-deadline](constraints/CON-launch-deadline.md) | Business | Active | Production-ready within ~2 weeks (target 2026-04-27, negotiable) |
+| [CON-gdpr-compliance](constraints/CON-gdpr-compliance.md) | Operational | Active | DSGVO/GDPR, Impressum, Cookie consent required |
+| [CON-bilingual](constraints/CON-bilingual.md) | Business | Active | German + English from launch |
+| [CON-no-free-tier](constraints/CON-no-free-tier.md) | Business | Active | No freemium — all readings are paid |

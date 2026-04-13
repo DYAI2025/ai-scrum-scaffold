@@ -10,20 +10,21 @@
 
 ## Project Overview
 
-<!-- Replace this section with a description of your project. -->
+**Bazodiac** is a scroll-driven landing page that introduces users to a tri-system astrology fusion — Western zodiac, Chinese BaZi (Four Pillars of Destiny), and Vedic Nakshatra — and lets them generate a personalized character or partnership reading directly in the browser.
 
-This repository uses a structured, AI-first development lifecycle. All project knowledge — specification, design, decisions, tasks — lives alongside the source code.
+The page serves as the consumer-facing entry point to the broader FuFirE (Fusion Firmament Engine) ecosystem. Its purpose is to convert visitors into engaged users by demonstrating the value of fused astrology readings through an immersive, animation-heavy single-page experience.
+
+**Core user flow**: Hero → choose path (character or partnership) → enter birth data → receive fused reading → explore methodology → CTA.
+
+**Tech stack**: React 19, TypeScript, Vite 7, Tailwind CSS v3, GSAP ScrollTrigger (pinned + scrubbed sections), shadcn/ui (new-york style, 50+ Radix components).
+
+**Source codebase**: `../` (this `app/` directory within the Landingpage-viteapp monorepo).
 
 ### Current State
 
-**Project**: FuFirE Paid API Readiness — bringing the Fusion Firmament Engine to production quality for a paid B2B API service.
+**Active phase**: Specification
 
-**Active phase**: Specification (complete) → Code (Phase 1 ready to execute)
-
-- **1-spec/**: Fully populated — 1 goal, 6 user stories, 6 requirements, 2 assumptions, 2 constraints, 5 stakeholders
-- **3-code/tasks.md**: 13 tasks across 2 phases, Phase 1 (P0 blockers) ready to start
-- **Source codebase**: `../bazi_engine/` — the FuFirE engine being improved
-- **API documentation**: `docs/API_SERVICE_DOCUMENTATION.md` — full endpoint + fusion math reference
+Stakeholders defined (4: founder, visitor, couple, sharer — sharer deferred to post-launch). Constraints defined (5). Assumptions (1: FuFirE API — Unverified, High risk). Goals defined (4: 3 Must-have + 1 Could-have post-launch). User stories defined (8). Requirements defined (14: 5 functional, 1 performance, 2 usability, 3 compliance, 1 security, 1 maintainability, 1 i18n). All artifacts cross-linked. Gap analysis (2026-04-14): 0 Critical, 1 Important (ASM-fufire-api-available unverified), 2 Minor. Ready for phase gate — verify assumption before Design.
 
 ---
 

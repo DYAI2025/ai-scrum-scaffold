@@ -12,8 +12,7 @@ Everyone with a stake in the system: those who use it, fund it, maintain it, or 
 
 | ID | Role | Description | Interests | Influence |
 |----|------|-------------|-----------|-----------|
-| STK-founder | Founder / Product Owner | FuFirE creator and business owner | Revenue, brand credibility, astrological correctness, launch timeline | High |
-| STK-api-consumer | B2B API Consumer | Developers integrating FuFirE into their apps (horoscope apps, wellness platforms) | Reliable data, accurate calculations, clear documentation, consistent response schemas | High |
-| STK-astrologer | Professional Astrologer | Subject matter expert validating astrological correctness | Traditional accuracy (BaZi + Western), proper orb tables, dignities, correct solar terms | Medium |
-| STK-end-user | End User | Person receiving horoscope/chart via consumer app | Personalized, meaningful daily content; trustworthy readings | Low |
-| STK-ops-engineer | Operations Engineer | Maintains deployment, monitors uptime, handles incidents | Observability, rate-limit accuracy, caching correctness, error traceability | Medium |
+| STK-founder | Founder / Product Owner | Bazodiac creator, drives product vision and business decisions | Conversion rate, brand perception, astrology accuracy, launch speed | High |
+| STK-visitor | First-time Visitor | Someone discovering Bazodiac alone, curious about their character reading | Quick value comprehension, engaging scroll experience, accurate results | Low |
+| STK-couple | Couple / Partners | Two people using the partnership path to explore relationship compatibility | Shared experience, resonant compatibility reading, easy data entry for both | Low |
+| STK-sharer | Sharing User (post-launch) | Visitor who completed a reading and wants to share or revisit. **Deferred to post-launch** — no launch artifacts target this stakeholder. | Shareable results, memorable reading, trustworthy framing | Low |
