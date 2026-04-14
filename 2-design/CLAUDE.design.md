@@ -18,7 +18,10 @@ This phase defines **how** we're building the system. Focus on architecture, dat
 
 | File | Title | Trigger |
 |------|-------|---------|
-<!-- Add rows as decisions are recorded. File column: [DEC-kebab-name](../decisions/DEC-kebab-name.md) -->
+| [DEC-bff-same-service](../decisions/DEC-bff-same-service.md) | Express BFF + SPA in one Railway service | Deployment topology, API layer location, Railway service setup |
+| [DEC-no-database](../decisions/DEC-no-database.md) | No persistent storage for MVP | BFF session store, any state that outlives a single request |
+| [DEC-fufire-bootstrap](../decisions/DEC-fufire-bootstrap.md) | Use /v1/experience/bootstrap as primary reading endpoint | BFF reading handler, FuFirE API integration |
+| [DEC-teaser-server-strip](../decisions/DEC-teaser-server-strip.md) | Teaser created server-side by stripping full reading | /api/reading response contract, TeaserReading vs FullReading types |
 
 ---
 

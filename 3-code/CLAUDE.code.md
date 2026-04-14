@@ -8,7 +8,17 @@ This phase contains the **implementation**. Focus on clean, tested, maintainable
 
 ## Components
 
-<!-- Add an entry for each component/codebase -->
+### SPA (Single-Page Application)
+
+- **Directory**: [`spa/`](spa/)
+- **Technology**: React 19, TypeScript, Vite 7, Tailwind CSS v3, GSAP ScrollTrigger, shadcn/ui
+- **Responsibility**: All client-side rendering, scroll animations, birth data forms, reading display, i18n, cookie consent, legal pages
+
+### BFF (Backend-for-Frontend)
+
+- **Directory**: [`bff/`](bff/)
+- **Technology**: Node.js, Express, TypeScript
+- **Responsibility**: FuFirE API proxy, Stripe integration, webhook validation, session store, static file serving
 
 ---
 

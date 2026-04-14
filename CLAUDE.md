@@ -22,9 +22,13 @@ The page serves as the consumer-facing entry point to the broader FuFirE (Fusion
 
 ### Current State
 
-**Active phase**: Specification
+**Active phase**: Code
 
-Stakeholders defined (4: founder, visitor, couple, sharer — sharer deferred to post-launch). Constraints defined (5). Assumptions (1: FuFirE API — Unverified, High risk). Goals defined (4: 3 Must-have + 1 Could-have post-launch). User stories defined (8). Requirements defined (14: 5 functional, 1 performance, 2 usability, 3 compliance, 1 security, 1 maintainability, 1 i18n). All artifacts cross-linked. Gap analysis (2026-04-14): 0 Critical, 1 Important (ASM-fufire-api-available unverified), 2 Minor. Ready for phase gate — verify assumption before Design.
+Specification complete: 4 stakeholders, 5 constraints, 4 goals (3 Approved + 1 Could-have), 8 user stories (Draft), 14 requirements (all Approved). ASM-fufire-api-available verified (2026-04-14).
+
+Design complete: architecture (single-service BFF monolith), data model (TypeScript types, no DB), API design (5 BFF endpoints). 4 decisions: DEC-bff-same-service, DEC-no-database, DEC-fufire-bootstrap, DEC-teaser-server-strip. Completeness assessment (2026-04-14): 0 Critical, 1 Important, 2 Minor.
+
+2 components: spa (React SPA), bff (Express BFF). Implementation plan created (2026-04-14): 7 phases, 42 tasks covering all 3 approved goals. Current phase: Phase 1 (BFF Scaffold & Railway Deployment).
 
 ---
 

@@ -2,7 +2,7 @@
 
 **Description**: Ensure the landing page is legally compliant for the German-speaking market from day one — DSGVO/GDPR, Impressum, Datenschutz, and cookie consent.
 
-**Status**: Draft
+**Status**: Approved
 
 **Priority**: Must-have
 

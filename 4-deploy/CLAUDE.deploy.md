@@ -10,7 +10,7 @@ This phase handles **deployment and operations**. Focus on reliability, repeatab
 
 | File | Title | Trigger |
 |------|-------|---------|
-<!-- Add rows as decisions are recorded. File column: [DEC-kebab-name](../decisions/DEC-kebab-name.md) -->
+| [DEC-bff-same-service](../decisions/DEC-bff-same-service.md) | Express BFF + SPA in one Railway service | Configuring Railway services, adding new services, deployment topology |
 
 ---
 

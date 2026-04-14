@@ -2,7 +2,7 @@
 
 **Description**: Guide visitors through the scroll-driven funnel — from first impression to paid astrology reading. The landing page must build enough trust and intrigue that users are willing to pay before seeing their full reading.
 
-**Status**: Draft
+**Status**: Approved
 
 **Priority**: Must-have
 

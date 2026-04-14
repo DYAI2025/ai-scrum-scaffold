@@ -2,7 +2,7 @@
 
 **Type**: Security
 
-**Status**: Draft
+**Status**: Approved
 
 **Priority**: Must-have
 

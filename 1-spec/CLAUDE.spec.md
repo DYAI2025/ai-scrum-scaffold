@@ -92,9 +92,9 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 
 | File | Priority | Status | Summary |
 |------|----------|--------|---------|
-| [GOAL-convert-visitors](goals/GOAL-convert-visitors.md) | Must-have | Draft | Convert visitors into paying customers through the scroll funnel |
-| [GOAL-immersive-experience](goals/GOAL-immersive-experience.md) | Must-have | Draft | Deliver premium, trust-building scroll experience (mobile, bilingual, fast) |
-| [GOAL-legal-launch-readiness](goals/GOAL-legal-launch-readiness.md) | Must-have | Draft | DSGVO, Impressum, Cookie consent for DACH launch |
+| [GOAL-convert-visitors](goals/GOAL-convert-visitors.md) | Must-have | Approved | Convert visitors into paying customers through the scroll funnel |
+| [GOAL-immersive-experience](goals/GOAL-immersive-experience.md) | Must-have | Approved | Deliver premium, trust-building scroll experience (mobile, bilingual, fast) |
+| [GOAL-legal-launch-readiness](goals/GOAL-legal-launch-readiness.md) | Must-have | Approved | DSGVO, Impressum, Cookie consent for DACH launch |
 | [GOAL-sharing-virality](goals/GOAL-sharing-virality.md) | Could-have | Draft | Enable sharing and revisiting of readings (post-launch) |
 
 ---
@@ -118,20 +118,20 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 
 | File | Type | Priority | Status | Summary |
 |------|------|----------|--------|---------|
-| [REQ-F-birth-data-input](requirements/REQ-F-birth-data-input.md) | Functional | Must-have | Draft | Birth date/time form, single + partner mode |
-| [REQ-F-reading-generation](requirements/REQ-F-reading-generation.md) | Functional | Must-have | Draft | Tri-system reading (API or client-side fallback) |
-| [REQ-F-teaser-preview](requirements/REQ-F-teaser-preview.md) | Functional | Must-have | Draft | Teaser preview before payment (max 30% of full reading) |
-| [REQ-F-payment-integration](requirements/REQ-F-payment-integration.md) | Functional | Must-have | Draft | Stripe Checkout for reading purchase |
-| [REQ-F-reading-unlock](requirements/REQ-F-reading-unlock.md) | Functional | Must-have | Draft | Unlock full reading after verified payment |
-| [REQ-F-i18n](requirements/REQ-F-i18n.md) | Functional | Must-have | Draft | DE + EN, locale detection, manual toggle |
-| [REQ-PERF-initial-load](requirements/REQ-PERF-initial-load.md) | Performance | Must-have | Draft | FCP < 3s on 4G, < 1.5s on broadband |
-| [REQ-USA-responsive-layout](requirements/REQ-USA-responsive-layout.md) | Usability | Must-have | Draft | Responsive 320px-2560px, 44px tap targets |
-| [REQ-USA-scroll-animations](requirements/REQ-USA-scroll-animations.md) | Usability | Must-have | Draft | 60fps GSAP animations, graceful degradation |
-| [REQ-COMP-cookie-banner](requirements/REQ-COMP-cookie-banner.md) | Compliance | Must-have | Draft | Cookie consent, blocks non-essential until opted in |
-| [REQ-COMP-impressum](requirements/REQ-COMP-impressum.md) | Compliance | Must-have | Draft | TMG/DDG-compliant Impressum |
-| [REQ-COMP-privacy-policy](requirements/REQ-COMP-privacy-policy.md) | Compliance | Must-have | Draft | DSGVO-compliant Datenschutzerklarung |
-| [REQ-SEC-data-protection](requirements/REQ-SEC-data-protection.md) | Security | Must-have | Draft | HTTPS, no PII in logs, Stripe webhook validation |
-| [REQ-MNT-railway-deploy](requirements/REQ-MNT-railway-deploy.md) | Maintainability | Must-have | Draft | Build and deploy on Railway with env-var config |
+| [REQ-F-birth-data-input](requirements/REQ-F-birth-data-input.md) | Functional | Must-have | Approved | Birth date/time form, single + partner mode |
+| [REQ-F-reading-generation](requirements/REQ-F-reading-generation.md) | Functional | Must-have | Approved | Tri-system reading (API or client-side fallback) |
+| [REQ-F-teaser-preview](requirements/REQ-F-teaser-preview.md) | Functional | Must-have | Approved | Teaser preview before payment (max 30% of full reading) |
+| [REQ-F-payment-integration](requirements/REQ-F-payment-integration.md) | Functional | Must-have | Approved | Stripe Checkout for reading purchase |
+| [REQ-F-reading-unlock](requirements/REQ-F-reading-unlock.md) | Functional | Must-have | Approved | Unlock full reading after verified payment |
+| [REQ-F-i18n](requirements/REQ-F-i18n.md) | Functional | Must-have | Approved | DE + EN, locale detection, manual toggle |
+| [REQ-PERF-initial-load](requirements/REQ-PERF-initial-load.md) | Performance | Must-have | Approved | FCP < 3s on 4G, < 1.5s on broadband |
+| [REQ-USA-responsive-layout](requirements/REQ-USA-responsive-layout.md) | Usability | Must-have | Approved | Responsive 320px-2560px, 44px tap targets |
+| [REQ-USA-scroll-animations](requirements/REQ-USA-scroll-animations.md) | Usability | Must-have | Approved | 60fps GSAP animations, graceful degradation |
+| [REQ-COMP-cookie-banner](requirements/REQ-COMP-cookie-banner.md) | Compliance | Must-have | Approved | Cookie consent, blocks non-essential until opted in |
+| [REQ-COMP-impressum](requirements/REQ-COMP-impressum.md) | Compliance | Must-have | Approved | TMG/DDG-compliant Impressum |
+| [REQ-COMP-privacy-policy](requirements/REQ-COMP-privacy-policy.md) | Compliance | Must-have | Approved | DSGVO-compliant Datenschutzerklarung |
+| [REQ-SEC-data-protection](requirements/REQ-SEC-data-protection.md) | Security | Must-have | Approved | HTTPS, no PII in logs, Stripe webhook validation |
+| [REQ-MNT-railway-deploy](requirements/REQ-MNT-railway-deploy.md) | Maintainability | Must-have | Approved | Build and deploy on Railway with env-var config |
 
 ---
 
@@ -139,7 +139,7 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 
 | File | Category | Status | Risk | Summary |
 |------|----------|--------|------|---------|
-| [ASM-fufire-api-available](assumptions/ASM-fufire-api-available.md) | Technology | Unverified | High | FuFirE API is deployed and accessible for integration |
+| [ASM-fufire-api-available](assumptions/ASM-fufire-api-available.md) | Technology | Verified | High | FuFirE API is deployed and accessible for integration |
 
 ---
 

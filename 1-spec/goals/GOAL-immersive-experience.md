@@ -2,7 +2,7 @@
 
 **Description**: Through GSAP animations, storytelling, and visual design, create an experience that feels premium and mystical — building enough trust and curiosity that visitors are willing to pay for a reading before they see it.
 
-**Status**: Draft
+**Status**: Approved
 
 **Priority**: Must-have
 
