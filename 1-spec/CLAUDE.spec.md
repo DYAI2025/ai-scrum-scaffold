@@ -132,6 +132,8 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 | [REQ-COMP-privacy-policy](requirements/REQ-COMP-privacy-policy.md) | Compliance | Must-have | Approved | DSGVO-compliant Datenschutzerklarung |
 | [REQ-SEC-data-protection](requirements/REQ-SEC-data-protection.md) | Security | Must-have | Approved | HTTPS, no PII in logs, Stripe webhook validation |
 | [REQ-MNT-railway-deploy](requirements/REQ-MNT-railway-deploy.md) | Maintainability | Must-have | Approved | Build and deploy on Railway with env-var config |
+| [REQ-F-landing-dual-reading-entry](requirements/REQ-F-landing-dual-reading-entry.md) | Functional | Must-have | Draft | Centered Bazodiac header, dual reading choice copy, image asset swaps |
+| [REQ-USA-landing-reading-center-snap](requirements/REQ-USA-landing-reading-center-snap.md) | Usability | Must-have | Draft | 1s center snap/hold prevents selector overshoot; reverse-scroll escape |
 
 ---
 

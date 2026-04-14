@@ -24,7 +24,7 @@ The page serves as the consumer-facing entry point to the broader FuFirE (Fusion
 
 **Active phase**: Code
 
-Specification complete: 4 stakeholders, 5 constraints, 4 goals (3 Approved + 1 Could-have), 8 user stories (Draft), 14 requirements (all Approved). ASM-fufire-api-available verified (2026-04-14).
+Specification: 4 stakeholders, 5 constraints, 4 goals (3 Approved + 1 Could-have), 8 user stories (Draft), 16 requirements (14 Approved + 2 Draft). ASM-fufire-api-available verified (2026-04-14). New Draft requirements (2026-04-14): REQ-F-landing-dual-reading-entry, REQ-USA-landing-reading-center-snap.
 
 Design complete: architecture (single-service BFF monolith), data model (TypeScript types, no DB), API design (5 BFF endpoints). 4 decisions: DEC-bff-same-service, DEC-no-database, DEC-fufire-bootstrap, DEC-teaser-server-strip. Completeness assessment (2026-04-14): 0 Critical, 1 Important, 2 Minor.
 
