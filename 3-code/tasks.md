@@ -34,13 +34,13 @@ When working on a task:
 
 | ID | Task | Priority | Status | Req | Dependencies | Updated | Notes |
 |----|------|----------|--------|-----|--------------|---------|-------|
-| TASK-bff-express-scaffold | Create `server/` directory with Express + TypeScript scaffold (package.json, tsconfig, entry point) | P0 | Todo | - | - | 2026-04-14 | |
-| TASK-bff-health-endpoint | Implement `GET /health` returning `{ "status": "ok" }` | P0 | Todo | [REQ-MNT-railway-deploy](../1-spec/requirements/REQ-MNT-railway-deploy.md) | TASK-bff-express-scaffold | 2026-04-14 | |
-| TASK-bff-static-serving | Configure Express to serve Vite `dist/` as static files with SPA fallback | P0 | Todo | [REQ-MNT-railway-deploy](../1-spec/requirements/REQ-MNT-railway-deploy.md) | TASK-bff-express-scaffold | 2026-04-14 | |
-| TASK-bff-env-config | Create env var configuration module with validation on startup | P0 | Todo | [REQ-MNT-railway-deploy](../1-spec/requirements/REQ-MNT-railway-deploy.md), [REQ-SEC-data-protection](../1-spec/requirements/REQ-SEC-data-protection.md) | TASK-bff-express-scaffold | 2026-04-14 | FUFIRE_API_KEY, FUFIRE_BASE_URL, STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, STRIPE_PRICE_ID, PUBLIC_URL |
-| TASK-bff-error-format | Implement consistent error response middleware (`{ error, code }` format) | P0 | Todo | [REQ-SEC-data-protection](../1-spec/requirements/REQ-SEC-data-protection.md) | TASK-bff-express-scaffold | 2026-04-14 | No PII in error responses |
-| TASK-railway-build-config | Configure root package.json scripts for Railway build and start | P0 | Todo | [REQ-MNT-railway-deploy](../1-spec/requirements/REQ-MNT-railway-deploy.md) | TASK-bff-static-serving | 2026-04-14 | |
-| TASK-shared-types | Create shared TypeScript types in `src/types/reading.ts` | P0 | Todo | - | - | 2026-04-14 | BirthData, ReadingRequest, TeaserReading, FullReading, PersonProfile, CheckoutRequest, CheckoutResponse |
+| TASK-bff-express-scaffold | Create `server/` directory with Express + TypeScript scaffold (package.json, tsconfig, entry point) | P0 | Done | - | - | 2026-04-14 | Implemented as server/index.ts with tsx runner |
+| TASK-bff-health-endpoint | Implement `GET /health` returning `{ "status": "ok" }` | P0 | Done | [REQ-MNT-railway-deploy](../1-spec/requirements/REQ-MNT-railway-deploy.md) | TASK-bff-express-scaffold | 2026-04-14 | |
+| TASK-bff-static-serving | Configure Express to serve Vite `dist/` as static files with SPA fallback | P0 | Done | [REQ-MNT-railway-deploy](../1-spec/requirements/REQ-MNT-railway-deploy.md) | TASK-bff-express-scaffold | 2026-04-14 | vite.config.ts base changed to '/' |
+| TASK-bff-env-config | Create env var configuration module with validation on startup | P0 | Done | [REQ-MNT-railway-deploy](../1-spec/requirements/REQ-MNT-railway-deploy.md), [REQ-SEC-data-protection](../1-spec/requirements/REQ-SEC-data-protection.md) | TASK-bff-express-scaffold | 2026-04-14 | FUFIRE_API_KEY, FUFIRE_BASE_URL, STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, STRIPE_PRICE_ID, PUBLIC_URL |
+| TASK-bff-error-format | Implement consistent error response middleware (`{ error, code }` format) | P0 | Done | [REQ-SEC-data-protection](../1-spec/requirements/REQ-SEC-data-protection.md) | TASK-bff-express-scaffold | 2026-04-14 | No PII in error responses |
+| TASK-railway-build-config | Configure root package.json scripts for Railway build and start | P0 | Done | [REQ-MNT-railway-deploy](../1-spec/requirements/REQ-MNT-railway-deploy.md) | TASK-bff-static-serving | 2026-04-14 | |
+| TASK-shared-types | Create shared TypeScript types in `src/types/reading.ts` | P0 | Done | - | - | 2026-04-14 | BirthData, ReadingRequest, TeaserReading, FullReading, PersonProfile, CheckoutRequest, CheckoutResponse; BFF-only types in server/types.ts |
 
 ---
 
@@ -48,9 +48,9 @@ When working on a task:
 
 | ID | Task | Priority | Status | Req | Dependencies | Updated | Notes |
 |----|------|----------|--------|-----|--------------|---------|-------|
-| TASK-bff-session-store | Implement in-memory session store (Map with 1h TTL eviction) | P1 | Todo | [REQ-F-reading-unlock](../1-spec/requirements/REQ-F-reading-unlock.md) | TASK-bff-express-scaffold | 2026-04-14 | |
-| TASK-bff-reading-endpoint | Implement `POST /api/reading`: validate, call FuFirE bootstrap, strip to teaser, store session, return `{ teaser, reading_hash }` | P1 | Todo | [REQ-F-reading-generation](../1-spec/requirements/REQ-F-reading-generation.md), [REQ-F-teaser-preview](../1-spec/requirements/REQ-F-teaser-preview.md) | TASK-bff-env-config, TASK-bff-session-store, TASK-shared-types | 2026-04-14 | |
-| TASK-bff-no-pii-logging | Configure request logging middleware that excludes `/api/reading` request bodies | P1 | Todo | [REQ-SEC-data-protection](../1-spec/requirements/REQ-SEC-data-protection.md) | TASK-bff-reading-endpoint | 2026-04-14 | |
+| TASK-bff-session-store | Implement in-memory session store (Map with 1h TTL eviction) | P1 | Done | [REQ-F-reading-unlock](../1-spec/requirements/REQ-F-reading-unlock.md) | TASK-bff-express-scaffold | 2026-04-14 | |
+| TASK-bff-reading-endpoint | Implement `POST /api/reading`: validate, call FuFirE bootstrap, strip to teaser, store session, return `{ teaser, reading_hash }` | P1 | Done | [REQ-F-reading-generation](../1-spec/requirements/REQ-F-reading-generation.md), [REQ-F-teaser-preview](../1-spec/requirements/REQ-F-teaser-preview.md) | TASK-bff-env-config, TASK-bff-session-store, TASK-shared-types | 2026-04-14 | server/routes/reading.ts |
+| TASK-bff-no-pii-logging | Configure request logging middleware that excludes `/api/reading` request bodies | P1 | Done | [REQ-SEC-data-protection](../1-spec/requirements/REQ-SEC-data-protection.md) | TASK-bff-reading-endpoint | 2026-04-14 | Inline middleware in server/index.ts |
 | TASK-bff-checkout-endpoint | Implement `POST /api/checkout`: look up session, create Stripe Checkout Session, return `{ checkout_url }` | P1 | Todo | [REQ-F-payment-integration](../1-spec/requirements/REQ-F-payment-integration.md) | TASK-bff-env-config, TASK-bff-session-store | 2026-04-14 | |
 | TASK-bff-unlock-endpoint | Implement `GET /api/reading/unlock`: verify Stripe session, call FuFirE bootstrap (full), return `{ full_reading }` | P1 | Todo | [REQ-F-reading-unlock](../1-spec/requirements/REQ-F-reading-unlock.md) | TASK-bff-checkout-endpoint, TASK-bff-session-store | 2026-04-14 | |
 | TASK-bff-webhook-endpoint | Implement `POST /api/webhooks/stripe`: raw body middleware, signature validation, handle `checkout.session.completed` | P1 | Todo | [REQ-SEC-data-protection](../1-spec/requirements/REQ-SEC-data-protection.md) | TASK-bff-env-config | 2026-04-14 | |
@@ -64,8 +64,8 @@ When working on a task:
 
 | ID | Task | Priority | Status | Req | Dependencies | Updated | Notes |
 |----|------|----------|--------|-----|--------------|---------|-------|
-| TASK-spa-input-form-api | Refactor InputSection to submit birth data to `POST /api/reading` and receive teaser response | P1 | Todo | [REQ-F-birth-data-input](../1-spec/requirements/REQ-F-birth-data-input.md) | TASK-bff-reading-endpoint, TASK-shared-types | 2026-04-14 | |
-| TASK-spa-teaser-display | Refactor RevealSection to display TeaserReading from API (zodiac, BaZi, Nakshatra, element, preview text) with unlock CTA | P1 | Todo | [REQ-F-teaser-preview](../1-spec/requirements/REQ-F-teaser-preview.md) | TASK-spa-input-form-api | 2026-04-14 | |
+| TASK-spa-input-form-api | Refactor InputSection to submit birth data to `POST /api/reading` and receive teaser response | P1 | Done | [REQ-F-birth-data-input](../1-spec/requirements/REQ-F-birth-data-input.md) | TASK-bff-reading-endpoint, TASK-shared-types | 2026-04-14 | Vite dev proxy added for /api; timezone auto-detected |
+| TASK-spa-teaser-display | Refactor RevealSection to display TeaserReading from API (zodiac, BaZi, Nakshatra, element, preview text) with unlock CTA | P1 | Done | [REQ-F-teaser-preview](../1-spec/requirements/REQ-F-teaser-preview.md) | TASK-spa-input-form-api | 2026-04-14 | Paywall CTA stub (Phase 3 wires checkout) |
 | TASK-spa-checkout-flow | Implement checkout: redirect to Stripe on CTA click, handle success redirect (`?session_id=`), call `/api/reading/unlock`, handle cancel/failure | P1 | Todo | [REQ-F-payment-integration](../1-spec/requirements/REQ-F-payment-integration.md), [REQ-F-reading-unlock](../1-spec/requirements/REQ-F-reading-unlock.md) | TASK-bff-checkout-endpoint, TASK-bff-unlock-endpoint, TASK-spa-teaser-display | 2026-04-14 | |
 | TASK-spa-full-reading-display | Implement full reading display: Western, BaZi Four Pillars, Wu-Xing balance, Nakshatra, soulprint sectors, signature blueprint | P1 | Todo | [REQ-F-reading-unlock](../1-spec/requirements/REQ-F-reading-unlock.md) | TASK-spa-checkout-flow | 2026-04-14 | |
 | TASK-spa-partner-input | Extend InputSection with partner birth data fields when partnership path is selected | P1 | Todo | [REQ-F-birth-data-input](../1-spec/requirements/REQ-F-birth-data-input.md) | TASK-spa-input-form-api, TASK-bff-partnership-reading | 2026-04-14 | |
@@ -90,8 +90,8 @@ When working on a task:
 
 | ID | Task | Priority | Status | Req | Dependencies | Updated | Notes |
 |----|------|----------|--------|-----|--------------|---------|-------|
-| TASK-phase-1-manual-testing | Create deploy runbook with startup instructions and health check verification | P0 | Todo | - | TASK-railway-build-config | 2026-04-14 | |
-| TASK-phase-2-manual-testing | Update runbook with birth data entry → teaser display test scenario | P1 | Todo | - | TASK-spa-teaser-display | 2026-04-14 | |
+| TASK-phase-1-manual-testing | Create deploy runbook with startup instructions and health check verification | P0 | Done | - | TASK-railway-build-config | 2026-04-14 | Runbook at 4-deploy/runbooks/RUN-bazodiac-railway.md |
+| TASK-phase-2-manual-testing | Update runbook with birth data entry → teaser display test scenario | P1 | Done | - | TASK-spa-teaser-display | 2026-04-14 | Tests 5–8 added to RUN-bazodiac-railway.md; HMR dev setup documented |
 | TASK-phase-3-manual-testing | Update runbook with complete character purchase flow test scenario (Stripe test mode) | P1 | Todo | - | TASK-spa-full-reading-display | 2026-04-14 | |
 | TASK-phase-4-manual-testing | Update runbook with partnership reading flow test scenario | P1 | Todo | - | TASK-spa-partnership-display | 2026-04-14 | |
 | TASK-phase-5-manual-testing | Update runbook with language switching test scenarios | P1 | Todo | - | TASK-spa-i18n-astrology-terms, TASK-spa-language-toggle | 2026-04-14 | |

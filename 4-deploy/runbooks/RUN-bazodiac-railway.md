@@ -2,7 +2,7 @@
 
 **Last updated**: 2026-04-14
 
-**Phase coverage**: Phase 1 (BFF Scaffold & Railway Deployment)
+**Phase coverage**: Phase 1 (BFF Scaffold & Railway Deployment), Phase 2 (Character Reading Flow — Teaser)
 
 ---
 
@@ -73,6 +73,59 @@ Railway executes `build` then `start` automatically.
 
 ---
 
+## Phase 2 Environment Variables
+
+Before testing Phase 2 features, set these in Railway service → Variables:
+
+| Variable | Value |
+|----------|-------|
+| `FUFIRE_API_KEY` | `ff_pro_<your-key>` |
+| `FUFIRE_BASE_URL` | `https://bafe-production.up.railway.app` |
+
+For local testing: `FUFIRE_API_KEY=... FUFIRE_BASE_URL=... PORT=3000 npm run start`
+
+---
+
+## Phase 2 Manual Test Scenarios
+
+### ✅ Test 5: Character Reading Flow
+
+1. Open the app in a browser
+2. On the Hero section, click the CTA button to scroll to path selection
+3. Select **"Character Reading"**
+4. On the Input section, enter a birth date (e.g. `1990-11-15`)
+5. Optionally check "Birth Time known" and enter a time
+6. Click **"Calculate my portrait"** — the button shows a spinner while loading
+7. After ~2–5 seconds the page scrolls to the Reveal section
+
+**Expected on Reveal section:**
+- Sun sign name visible (e.g. "Scorpio")
+- Chinese year animal (e.g. "Year of the Horse")
+- Nakshatra name
+- Element summary (e.g. "Water dominant (58%)")
+- Preview text paragraph
+- "Unlock full reading" button visible
+
+### ✅ Test 6: Validation — Missing Birth Date
+
+1. On the Input section, leave the Birth Date empty
+2. The "Calculate my portrait" button should be disabled (greyed out)
+
+### ✅ Test 7: Validation — API Error Handling
+
+1. Temporarily misconfigure `FUFIRE_API_KEY` (wrong key)
+2. Submit a valid birth date
+3. An error message should appear below the form (not a blank screen or crash)
+
+### ✅ Test 8: Partnership Mode
+
+1. Select **"Partnership Reading"** from the path section
+2. On Input, fill in both Birth Date fields
+3. Click "Calculate my portrait"
+4. Reveal section shows two subjects (subject + partner)
+
+---
+
 ## Phase 1 Manual Test Scenarios
 
 After deployment, verify:
@@ -107,17 +160,28 @@ In Railway dashboard → Service → Deployments:
 
 ## Local Testing
 
+### Production build + BFF (Phase 1 — static files only)
+
 ```bash
-# Build first
 npm run build
-
-# Start BFF server locally
 PORT=3000 npm run start
-
-# Verify
 curl http://localhost:3000/health   # → {"status":"ok"}
 open http://localhost:3000          # → SPA
 ```
+
+### Development with HMR + BFF (Phase 2+ — live reload + API)
+
+Run both processes in separate terminals:
+
+```bash
+# Terminal 1: BFF (API + serves static in production only)
+FUFIRE_API_KEY=ff_pro_<key> FUFIRE_BASE_URL=https://bafe-production.up.railway.app PORT=3000 npm run start
+
+# Terminal 2: Vite dev server (HMR, proxies /api to BFF on :3000)
+npm run dev
+```
+
+Vite's dev proxy (configured in `vite.config.ts`) forwards `/api/*` calls to `http://localhost:3000`, so the SPA at `http://localhost:5173` can call the BFF without CORS issues.
 
 ---
 
