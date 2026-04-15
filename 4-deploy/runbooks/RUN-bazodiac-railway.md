@@ -2,7 +2,7 @@
 
 **Last updated**: 2026-04-14
 
-**Phase coverage**: Phase 1 (BFF Scaffold & Railway Deployment), Phase 2 (Character Reading Flow — Teaser)
+**Phase coverage**: Phase 1–3 (BFF Scaffold, Teaser Flow, Payment & Full Reading)
 
 ---
 
@@ -126,6 +126,70 @@ For local testing: `FUFIRE_API_KEY=... FUFIRE_BASE_URL=... PORT=3000 npm run sta
 
 ---
 
+## Phase 3 Environment Variables
+
+Before testing Phase 3, add these in Railway → Variables:
+
+| Variable | Value |
+|----------|-------|
+| `STRIPE_SECRET_KEY` | `sk_test_...` or `sk_live_...` |
+| `STRIPE_WEBHOOK_SECRET` | `whsec_...` (from Stripe Dashboard → Webhooks) |
+| `STRIPE_PRICE_ID` | `price_...` (from Stripe Dashboard → Products) |
+| `PUBLIC_URL` | `https://bazodiac-landingpage-production.up.railway.app` |
+
+---
+
+## Phase 3 Manual Test Scenarios
+
+### ✅ Test 9: Checkout Redirect
+
+1. Generate a teaser reading (enter birth date, click Calculate)
+2. On the Reveal section, click **"Unlock full reading"**
+3. Button should show spinner with "Redirecting to checkout…"
+4. You should be redirected to Stripe Checkout page
+
+**Expected:** Stripe Checkout page shows with correct product and price.
+
+### ✅ Test 10: Successful Payment → Full Reading
+
+1. Complete Test 9 and pay with Stripe test card `4242 4242 4242 4242` (any future expiry, any CVC)
+2. After payment, Stripe redirects back to the app with `?session_id=cs_test_...`
+3. The app should automatically call `/api/reading/unlock` and display the full reading
+
+**Expected on full reading:**
+- "Reading unlocked" badge with checkmark
+- Western Astrology section: Sun, Moon, Rising signs
+- Four Pillars section: year/month/day/hour with Stamm, Zweig, Tier
+- Wu-Xing Balance: 5 element bars with percentages
+- Soulprint Sectors: 12 values in a grid
+- Harmony Index number
+
+### ✅ Test 11: Cancelled Payment → Teaser Remains
+
+1. Start checkout (click "Unlock full reading")
+2. On Stripe Checkout, click the back arrow or close the tab
+3. Navigate back to the app
+
+**Expected:** Teaser is still visible, "Unlock full reading" button is still clickable, no error message.
+
+### ✅ Test 12: Webhook Endpoint (via Stripe CLI)
+
+```bash
+stripe listen --forward-to https://bazodiac-landingpage-production.up.railway.app/api/webhooks/stripe
+stripe trigger checkout.session.completed
+```
+
+**Expected:** Server logs `[webhook] Payment confirmed for reading <hash>` or `[webhook] checkout.session.completed for unknown session`.
+
+### ✅ Test 13: Expired Session
+
+1. Generate a teaser, wait >1 hour (or restart the Railway service to clear the in-memory store)
+2. Try to unlock with a stale `session_id`
+
+**Expected:** Error message "Reading session has expired — please generate a new reading" (HTTP 410).
+
+---
+
 ## Phase 1 Manual Test Scenarios
 
 After deployment, verify:
@@ -210,3 +274,4 @@ In Railway dashboard → Service → Deployments → select a previous deploymen
 | 404 on `dist/index.html` | Build not run before start | Run `npm run build` first |
 | Assets 404 in browser | Old `base: './'` in vite.config | Already fixed to `base: '/'` — rebuild |
 | Railway deploy fails at build | TypeScript error | Run `npm run build` locally to reproduce |
+` locally to reproduce |
